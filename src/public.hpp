@@ -10,8 +10,9 @@ enum status_{
 
 class PCB{
     public:
-    PCB(string namee,int timee) :name(namee),sum_time(need_time){
+    PCB(string namee,int timee) :name(namee),sum_time(timee){
         need_time = sum_time;
+        next = nullptr;
     };
     PCB(){};
     string name;

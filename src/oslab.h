@@ -16,7 +16,7 @@ public:
 public:
     
     void showPCB();
-    
+    void init_q_to_t();
 private:
 void on_newButton_clicked();
 void on_startButton_clicked();

@@ -3,19 +3,24 @@
 
 queue_list::queue_list()
 {
-    
-    head = new PCB();
-    head->next = nullptr;
-    end = head;
-    now = head ->next;
+    now=nullptr;
+    end=nullptr;
 }
 
 
 void queue_list::addPCB(PCB *p)
     {
-        p->status=waiting;
+       if(now==nullptr)
+       {
+        now = p;
+        end = now;
+        p->status = waiting;
+       }
+       else
+       {
         end->next = p;
         end = p;
+       }
     }
 
 bool queue_list::deletePCB()
