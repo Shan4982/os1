@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>699</width>
-    <height>587</height>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -74,6 +74,9 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QTextBrowser" name="group1time1">
      <property name="geometry">
@@ -83,6 +86,9 @@
        <width>51</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>

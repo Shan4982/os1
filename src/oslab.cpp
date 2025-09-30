@@ -38,9 +38,11 @@ void oslab::showPCB()
     
     while(temp_st!=nullptr&&temp!=nullptr)
     {
-        temp_st->name->setText(QString::fromStdString(temp->name));
-        
-        temp_st->time->setText(QString::number(temp->need_time));
+        if(temp_st && temp_st->name && temp_st->time) {
+            temp_st->name->setText(QString::fromStdString(temp->name));
+            temp_st->time->setText(QString::number(temp->need_time));
+            qDebug() << "UI updated:" << temp_st->name->toPlainText().toStdString();// Ìí¼Óµ÷ÊÔÊä³ö
+        }
         temp_st = temp_st->next;
         temp = temp->next;
     }
