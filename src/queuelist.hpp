@@ -3,7 +3,6 @@
 using namespace std;
 class queue_list{
 private:
-    PCB *head;
     PCB *now;
     PCB *end;
     int timePiece = 5;

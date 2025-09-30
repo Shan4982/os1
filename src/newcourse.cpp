@@ -42,5 +42,7 @@ void newcourse::on_yesButton_clicked()
     QString Qname = ui->name->text();//获取进程名称
     QString Qtime = ui->time->text();//
     emit dataSent_oslab(Qname,Qtime);
+    ui->name->clear();
+    ui->time->clear();
     this->close();
 }

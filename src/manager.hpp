@@ -16,7 +16,7 @@ class connect_q_t
 {
     public:
  
-    
+    int num = 0;
     std::unique_ptr<st> one;
     std::unique_ptr<st> two;
     std::unique_ptr<st> three;
