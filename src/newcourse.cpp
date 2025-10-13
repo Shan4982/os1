@@ -11,6 +11,7 @@ newcourse::newcourse(QWidget *parent)
     connect(ui->yes, &QPushButton::clicked, this,&newcourse::on_yesButton_clicked);
 }
 
+
 newcourse::~newcourse()
 {
     delete ui;

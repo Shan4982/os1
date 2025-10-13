@@ -1,12 +1,16 @@
 #ifndef PUBLIC_HPP
 #define PUBLIC_HPP
-
+#pragma once
+#include<mutex>
+#include<future>
 #include<string>
 #include<iostream>
 using namespace std;
 enum status_{
     waiting,processing,stop
 };
+
+extern std::mutex mut;
 
 class PCB{
     public:
