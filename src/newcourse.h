@@ -1,6 +1,7 @@
 #ifndef NEWCOURSE_H
 #define NEWCOURSE_H
 #include <QDialog>
+#pragma once
 #include <QWidget>
 #include "ui_newcourse.h"
 #include "public.hpp"
