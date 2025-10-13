@@ -5,9 +5,12 @@ class queue_list{
 private:
     PCB *now;
     PCB *end;
-    int timePiece = 5;
+    
     int where;
-public:
+   
+public: 
+    int timePiece;
+    int now_piece;
     queue_list();
     ~queue_list( );
     void addPCB(PCB *p);
@@ -19,7 +22,7 @@ public:
     bool updata_ifmove();
     void deletePCB();
     void movePCB();
-    
+    bool if_isrunning();
 };
 
 
