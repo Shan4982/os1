@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5) # CMake install : https://cmake.org/download/
+cmake_minimum_required(VERSION 3.5...3.50) # CMake install : https://cmake.org/download/
 project(oslab LANGUAGES CXX)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_PREFIX_PATH "C:/Qt/6.9.2/mingw_64") # Qt Kit Dir
