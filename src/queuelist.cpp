@@ -3,7 +3,6 @@
 
 queue_list::queue_list():now(nullptr),end(nullptr)
 {
-
 }
 
 
@@ -85,21 +84,21 @@ bool queue_list::updata_ifmove()
     }
     else
     {
-        if(timePiece<=0)
+        if(now_piece<=0)
         {
-            timePiece = 5;
+            now_piece = timePiece;
             now->status = waiting;
             return true;
         }
+        now->status = processing;
         now->had_time++;
         now->need_time--;
-        timePiece--;
-        cout<<timePiece;
+        now_piece--;
         if(now->need_time<=0)
         {
             now->need_time = 0;
             now->status = stop;
-            timePiece = 5;
+            now_piece = timePiece;
             deletePCB();
             return false;
         }
@@ -136,6 +135,22 @@ void queue_list::movePCB()
     }
 }
 
+bool queue_list::if_isrunning()
+{
+    if(now==nullptr)
+    {
+        return false;
+    }
+    else if(now->status==processing)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 //////////////////////////////////////////////////////////////////////////////
 
 
@@ -144,7 +159,12 @@ all_queue::all_queue()
     group1.set_where(1);
     group2.set_where(2);
     group3.set_where(3);
-    group3.set_timePiece(999);
+    group1.set_timePiece(5);
+    group2.set_timePiece(6);
+    group3.set_timePiece(8);
+    group1.now_piece = group1.timePiece ;
+    group2.now_piece = group2.timePiece ;
+    group3.now_piece = group3.timePiece ;
 };
 
 void all_queue::addPCB(PCB *p)
@@ -184,7 +204,7 @@ void all_queue::move_PCB(PCB *p,int where)
 
 void all_queue::updata()
 {
-    if(!group1.if_empty())
+    if(!group1.if_empty()&&!group2.if_isrunning()&&!group3.if_isrunning())
     {
         if(group1.updata_ifmove())
         {   
@@ -193,7 +213,7 @@ void all_queue::updata()
             move_PCB(temp,2);
         }
     }
-    else if(!group2.if_empty())
+    else if(!group2.if_empty()&&!group3.if_isrunning())
     {
         if(group2.updata_ifmove())
         {   
